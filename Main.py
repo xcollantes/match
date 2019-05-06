@@ -1,15 +1,19 @@
 #@author Xavier Collantes
 #@date May 5 2019
 
+import yaml
 from Match import *
 import os
 
 
 
 def main():
-  username = 'Me'
-  passwd = 'Hello'
-  os.getcwd()
+  with open('temp.yaml') as f:
+    config = yaml.safe_load(f)
+
+  username = config['test_credentials']['user']
+  passwd = config['test_credentials']['passwd']
+  
   match = Match(username, passwd)
   match.logIn()
 
