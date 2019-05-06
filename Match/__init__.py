@@ -28,10 +28,14 @@ class Match:
     logging.info("Logging in")
 
     self.browser.get('https://www.match.com/login/')    
-    self.browser.get_element_by_id('email').send_keys(self.user)
-    self.browser.get_element_by_id('password').send_keys(self.pw)
-    self.browser.get_element_by_xpath('//*[@id="mainContent"]/section/form/div/div/div[1]/div[5]/button').click()
+    self.browser.find_element_by_id('email').send_keys(self.user)
+    self.browser.find_element_by_id('password').send_keys(self.pw)
+    self.browser.find_element_by_xpath('//*[@id="mainContent"]/section/form/div/div/div[1]/div[5]/button').click()
 
 
-  def quit():
+  def returnTest(self):
+    i = self.browser.find_element_by_class_name('css-f337do').text
+    print(i)
+
+  def quit(self):
     self.browser.quit()

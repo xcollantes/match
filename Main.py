@@ -17,7 +17,7 @@ def main():
   match = Match(username, passwd)
   match.logIn()
 
-
+  match.returnTest()
 
 
 if __name__=='__main__':
