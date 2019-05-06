@@ -1,18 +1,20 @@
-@author "Xavier Collantes"
-@date May 5 2019
+#@author Xavier Collantes
+#@date May 5 2019
 
+from Match import *
+import os
 
-import logging
-import Match
-
-logging.simpleConfig(level=logging.INFO)
 
 
 def main():
-  logging.DEBUG("Starting MAIN.")
+  username = 'Me'
+  passwd = 'Hello'
+  os.getcwd()
+  match = Match(username, passwd)
+  match.logIn()
 
 
 
 
-if __name__="__main__":
+if __name__=='__main__':
   main()
